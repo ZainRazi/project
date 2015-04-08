@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="32"
+   name=""
+   committed-date="2012-11-09T16:52:05.815909Z"
+   url="https://svn.cs.york.ac.uk/svn/robot-testing-sim/robot-testing-sim/src"
+   last-author="xueyi@CS.YORK.AC.UK"
+   kind="dir"
+   uuid="fb26a14b-4c7c-4c1c-ab95-cd615469b73e"
+   repos="https://svn.cs.york.ac.uk/svn/robot-testing-sim"
+   revision="32"/>
+<entry
+   name="SimBuilder.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="Wall.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="steering"
+   kind="dir"/>
+<entry
+   name="AccidentDetector.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="Car.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="Waypoint.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="Constants.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="Entity.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="modeling"
+   kind="dir"/>
+<entry
+   name="CircleObstacle.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="SimulationWithUI.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="Simulation.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="Target.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="BearingCal.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="CarPerformance.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+<entry
+   name="dominant"
+   kind="dir"/>
+<entry
+   name="Obstacle.java"
+   kind="file"
+   deleted="true"
+   revision="38"/>
+</wc-entries>

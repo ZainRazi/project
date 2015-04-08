@@ -1,0 +1,2 @@
+RandomSeed, ExternalRandomSeed, #Junctions, #Roads, #Obstacles, #Cars, MinJunctionSep, DistanceUGVtoTarget, DistanceTargetToObs, UGVTargetRoadSep, CriticalObsSep, MinTargetCentreSep, MinTargetKerbSep, #Faults, #Steps, #Accidents, #LeaveRoad, #CrossCentre, #CrossSE, #CrossNW, #CrashObs, #CrashCar, #Timeout
+-384022199, -1420609970, 20, 10, 2, 8, 6.12368971052425, 53.6780436099406, 42.01029161028156, 0.0, 0, 0.7823747869255016, 3.7823747869255016, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0

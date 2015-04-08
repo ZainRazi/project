@@ -1,0 +1,15 @@
+*** New Run, Seed = 1294924568; External Seed =-131353824 *** NoCars = 0; CarMaxDeceleration = 0.15625; CarMaxSpeed = 2.5; CarMaxAcceleration = 0.1; CarMaxTurning = 15.0; NoObstacles = 0.
+Failure when adding junction: 5; unable to locate intersection on road.
+Failure when adding junction: 6; unable to locate intersection on road.
+Failure when adding junction: 9; unable to locate intersection on road.
+Failure when adding junction: 10; unable to locate intersection on road.
+Failure when adding junction: 11; unable to locate intersection on road.
+Failure when adding junction: 13; unable to locate intersection on road.
+Failure when adding junction: 14; unable to locate intersection on road.
+Failure when adding junction: 16; unable to locate intersection on road.
+Failure when adding junction: 17; intersections detected in both directions.
+Failure when adding junction: 19; unable to locate intersection on road.
+Failure when adding junction: 20; unable to locate intersection on road.
+Junctions added: 10/21; roads added: 11.
+Obstacles added: 6/7.
+Car obstacles added: 15/15.

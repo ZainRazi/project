@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+require_relative '../wallace'
+
+puts "Wallace (Practical 4)\n\n"
+
+unless ARGV.length == 1
+  puts("FATAL ERROR - Failed to run Wallace: expected the name of a Wallace file.")
+  exit!
+end
+
+# Unfreeze the provided string, prepend the current working directory and
+# import the requested file.
+Wallace.import("#{Dir.pwd}/#{ARGV[0]}")

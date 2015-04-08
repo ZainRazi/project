@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="38"
+   name=""
+   committed-date="2012-12-14T14:51:18.695415Z"
+   url="https://svn.cs.york.ac.uk/svn/robot-testing-sim/robot-testing-sim/src/dominant"
+   last-author="xueyi@CS.YORK.AC.UK"
+   kind="dir"
+   repos="https://svn.cs.york.ac.uk/svn/robot-testing-sim"
+   revision="38"/>
+<entry
+   committed-rev="38"
+   name="car-obstacle.params"
+   text-time="2012-12-14T09:15:34.000000Z"
+   committed-date="2012-12-14T14:51:18.695415Z"
+   checksum="25cb69795869a6d6ad10f60b58fece7d"
+   last-author="xueyi@CS.YORK.AC.UK"
+   kind="file"/>
+<entry
+   committed-rev="38"
+   name="MaxAccidents.java"
+   text-time="2012-12-13T17:35:24.957379Z"
+   committed-date="2012-12-14T14:51:18.695415Z"
+   checksum="8507414e27dbcce0ea3031ac30a60e23"
+   last-author="xueyi@CS.YORK.AC.UK"
+   kind="file"/>
+<entry
+   committed-rev="38"
+   name="Simulation.java"
+   text-time="2012-12-13T20:17:22.000000Z"
+   committed-date="2012-12-14T14:51:18.695415Z"
+   checksum="e992c031d8d2f9c72e91f37fb161397a"
+   last-author="xueyi@CS.YORK.AC.UK"
+   kind="file"/>
+<entry
+   committed-rev="38"
+   name="OurMutatorPipeline.java"
+   text-time="2012-12-13T18:21:53.645466Z"
+   committed-date="2012-12-14T14:51:18.695415Z"
+   checksum="cc4fcfd18c0f82dee9c22990f49bec4d"
+   last-author="xueyi@CS.YORK.AC.UK"
+   kind="file"/>
+<entry
+   committed-rev="38"
+   name="SimulationWithUI.java"
+   text-time="2012-12-12T21:18:10.000000Z"
+   committed-date="2012-12-14T14:51:18.695415Z"
+   checksum="c1eb9140a020cb18d2d0dc4c20ca1898"
+   last-author="xueyi@CS.YORK.AC.UK"
+   kind="file"/>
+</wc-entries>
