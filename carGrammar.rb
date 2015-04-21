@@ -25,8 +25,8 @@ return {
     }
 
     private boolean shouldWeAdjust() {
-    
-        return <shouldWeAdjust>;
+        return false;
+
     }
 
     private void notInJunction() {
@@ -116,8 +116,8 @@ else {
 
 'insideJunction'=>['<statements>'],
 'gettingClose'=>['<statements>'],
-'notInJunction'=>['<statements>'],
-'shouldWeAdjust'=>['<bool>']
+'notInJunction'=>['<statements>']
+#'shouldWeAdjust'=>['<bool>']
 
 }
 

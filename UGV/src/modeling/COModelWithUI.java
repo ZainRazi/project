@@ -55,7 +55,7 @@ public class COModelWithUI extends GUIState
     	//super(new COModel( System.nanoTime(), Constants.WorldXVal, Constants.WorldYVal, true, 0, 0)); // HH 22/7/14 Added percentage faults parameter to end
     	// HH 3.9.14 Changed seed method as concerned that integer casting of long value that occurs later could 
     	//result in lots of seeds having MAX_VALUE
-    	super(new COModel( new SecureRandom().nextInt(), Constants.WorldXVal, Constants.WorldYVal, true, 0, 0));     	
+    	super(new COModel( new SecureRandom().nextInt(), Constants.WorldXVal, Constants.WorldYVal, true, 0, 0));
     	System.out.println("COModelWithUI is being called!"+ "it's state(model)is: "+ state.toString());
     	sBuilder = new COModelBuilder((COModel) state);
     }
@@ -122,8 +122,8 @@ public class COModelWithUI extends GUIState
 
         //evolved DumbCar is type DumbCarImpl so outline is not being set here
 
-        //right now only working for first one??
-		environmentPortrayal.setPortrayalForClass(EvolvedCarReader.getInstance().getTemp(), new OrientedPortrayal2D( new LabelledPortrayal2D( new RectanglePortrayal2D(Constants.OBSTACLE_WIDTH * 6)
+        //right now only working for first one?? EvolvedCarReader.getInstance().getTemp()
+		environmentPortrayal.setPortrayalForClass(Car.class, new OrientedPortrayal2D( new LabelledPortrayal2D( new RectanglePortrayal2D(Constants.OBSTACLE_WIDTH * 6)
 		{
 			public void draw(Object object, Graphics2D graphics, DrawInfo2D info)
 			{

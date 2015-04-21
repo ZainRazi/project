@@ -69,7 +69,7 @@ public class AccidentDetector implements Constants,Steppable {
 
 	public AccidentDetector(double percentageFaults, int mapNo){
 
-        fitnessLog = new File("FitnessLog" + ".txt");
+        fitnessLog = new File("FitnessLog.txt");
 
         try{
             psFitness = new PrintStream(new FileOutputStream(fitnessLog));
@@ -79,6 +79,8 @@ public class AccidentDetector implements Constants,Steppable {
             System.out.print("fitnessLog file not found!");
             return;
         }
+
+
 
 		// HH 28.8.14 : NOTE - differences in percentages of faults must be > 1% or files will be overwritten
 		accidentLog = new File("AccidentLog" + Math.round(percentageFaults * 100) + "_" + mapNo + ".txt");
@@ -262,7 +264,7 @@ public class AccidentDetector implements Constants,Steppable {
             }
 
             // HH - 21/07/14 Added a limiter on the number of steps that have been executed (this is also an failure condition)
-            if (sim.schedule.getSteps() > 5000) {
+            if (sim.schedule.getSteps() > 200){ //5000) {
                 Double2D targetLoc = sim.getTargetLoc();
                 String locString = "(" + targetLoc.x + "," + targetLoc.y + ")";
 
@@ -279,7 +281,7 @@ public class AccidentDetector implements Constants,Steppable {
         }
 
         //if no accidents trip the flag we have recovered from an accident and can start logging accidents again in the next loop
-        if (eventFlag = false) {
+        if (eventFlag == false) {
             inAccident = false;
         }
 	}

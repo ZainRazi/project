@@ -487,35 +487,41 @@ public class DumbCarImpl extends DumbCar {
     
     
     
-
     private void insideJunction() {
-        goSlowStop(); goFaster(false); emergencyStop();
+        goReallySlow(); goFaster(true); goSlow();
     }
-
-    private void insideJunctionApproach() {
-
-    }
-
-    private void doingUTurnFromJunction() {
-
-    }
-
-    private void gettingCloseToObject() {
-        turnLeft((double) 7561331);
-    }
-
-    private void isCloseToObject() {
- 
-    }
-
-    private boolean shouldWeAdjust() {
     
-        return true;
+    private void insideJunctionApproach() {
+        
     }
-
+    
+    private void doingUTurnFromJunction() {
+        
+    }
+    
+    private void gettingCloseToObject() {
+        if (true) {
+            goSlow();
+        }
+        else {
+            goReallySlow();
+        }
+    }
+    
+    private void isCloseToObject() {
+        
+    }
+    
+    private boolean shouldWeAdjust() {
+        
+        return false;
+    }
+    
     private void notInJunction() {
-        goReallySlow(); goReallySlow(); goSlowStop();
+        goSlowStop();turnLeft(sim.environment.getObjectLocation(this).getY());
     }
+    
+
 
 }
 

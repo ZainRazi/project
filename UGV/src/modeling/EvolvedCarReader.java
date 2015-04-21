@@ -3,6 +3,7 @@ package modeling;
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
 import java.io.File;
+import java.io.PrintStream;
 import java.lang.reflect.Constructor;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -35,8 +36,27 @@ public class EvolvedCarReader {
         this.evolvedCarName = name;
     }
 
+
     public Class<?> getTemp(){
-        return temp;
+
+
+        File root2 = new File(System.getProperty("user.dir"));
+
+        try {
+            //       URLClassLoader classLoader = URLClassLoader.newInstance(new URL[] { root.toURI().toURL() });
+            URLClassLoader classLoader = URLClassLoader.newInstance(new URL[]{root2.toURI().toURL()});
+            Class<?> cls = Class.forName("DumbCarImpl", true, classLoader);
+
+            temp = cls;
+        }
+        catch (Exception e)
+
+        {
+            System.out.print("reader has crashed trying to read class");
+            System.exit(0);
+        }
+
+            return temp;
     }
 
     public DumbCar readCar(int idNo, CarPerformance performance,
@@ -45,8 +65,14 @@ public class EvolvedCarReader {
         //File root = new File(System.getProperty("user.dir"));
         //File sourceFile = new File(root, name+"/DumbCarImpl.java");
 
-
+        //if run from wallace
         File root = new File(System.getProperty("user.dir")+"/UGV/evolved/"+this.evolvedCarName+"/");
+
+        //if run from java directory is different
+        if(evolvedCarName.equals("test")) {
+            root = new File(System.getProperty("user.dir")+"/evolved/"+this.evolvedCarName+"/");
+        }
+
         File sourceFile = new File(root, "DumbCarImpl.java");
 
       //  File root = new File("user.home/UGV/evolved/"+this.evolvedCarName+"/");

@@ -1,6 +1,0 @@
-*** New Run, Seed = -384022199*** External Seed = -1420609970; Start time = 06:59:40:877.
-Map/Network Complexity Measures: MinJunctSep = 6.12368971052425; UGVTargetSep = 53.6780436099406; TargetObstacleSep = 42.01029161028156; UGVTargetRoadSep = 0.0; CriticalObsSep = 0; MinTargetCentreSep = 0.7823747869255016; MinTargetKerbSep = 3.7823747869255016.
-STEP #0 - Fault Array: 0=false, 1=false, 2=false, 3=false, 4=false, 5=false, 6=false, 7=false, 8=false, 9=false, 10=false, 11=false, 12=false, 13=false, 14=false, 15=false, 16=false, 17=false, 18=false, 19=false, 20=false, 21=false, 22=false, 23=false, 24=false, 25=false, 26=false, 27=false, 28=false, .
-STEP #0 - Faults Called: 0=0, 1=0, 2=0, 3=0, 4=0, 5=0, 6=0, 7=0, 8=0, 9=0, 10=0, 11=0, 12=0, 13=0, 14=0, 15=0, 16=0, 17=0, 18=0, 19=0, 20=0, 21=0, 22=0, 23=0, 24=0, 25=0, 26=0, 27=0, 28=0, .
-Targets Found: 0=false, 
-*** End of run, Seed = -384022199, External Seed = -1420609970*** NoCars = 8; CarMaxDeceleration = 0.15625; CarMaxSpeed = 2.5; CarMaxAcceleration = 0.1; CarMaxTurning = 15.0; NoObstacles = 2; NoJunctions = 9; NoAccidents = 0; NoSteps = 0; % Faults = 0/29=0; End time = 06:59:41:75.

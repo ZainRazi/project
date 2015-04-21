@@ -160,6 +160,8 @@ public class COModel extends SimState
 	 */
     public COModel(long seed, double x, double y, boolean UI, double inPercentageFaults, int mapNo)//,int noCars, int noObstacles)
     {
+
+
     	super(seed);
     	System.out.println("At the start of COModel Constructor: Free =" + Runtime.getRuntime().freeMemory());
     	System.out.println("At the start of COModel Constructor: Max =" + Runtime.getRuntime().maxMemory());

@@ -58,47 +58,89 @@
     <exclude name="**/?*.clj"/>
   </patternset>
   
-  <!-- JDK definitions -->
-  
-  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
-  <path id="jdk.classpath.1.8">
-    <fileset dir="${jdk.home.1.8}">
-      <include name="lib/ant-javafx.jar"/>
-      <include name="lib/dt.jar"/>
-      <include name="lib/javafx-mx.jar"/>
-      <include name="lib/jconsole.jar"/>
-      <include name="lib/sa-jdi.jar"/>
-      <include name="lib/tools.jar"/>
-      <include name="jre/lib/charsets.jar"/>
-      <include name="jre/lib/deploy.jar"/>
-      <include name="jre/lib/javaws.jar"/>
-      <include name="jre/lib/jce.jar"/>
-      <include name="jre/lib/jfr.jar"/>
-      <include name="jre/lib/jfxswt.jar"/>
-      <include name="jre/lib/jsse.jar"/>
-      <include name="jre/lib/management-agent.jar"/>
-      <include name="jre/lib/plugin.jar"/>
-      <include name="jre/lib/resources.jar"/>
-      <include name="jre/lib/rt.jar"/>
-      <include name="jre/lib/ext/cldrdata.jar"/>
-      <include name="jre/lib/ext/dnsns.jar"/>
-      <include name="jre/lib/ext/jfxrt.jar"/>
-      <include name="jre/lib/ext/localedata.jar"/>
-      <include name="jre/lib/ext/nashorn.jar"/>
-      <include name="jre/lib/ext/sunec.jar"/>
-      <include name="jre/lib/ext/sunjce_provider.jar"/>
-      <include name="jre/lib/ext/sunpkcs11.jar"/>
-      <include name="jre/lib/ext/zipfs.jar"/>
-    </fileset>
-  </path>
-  
-  <property name="project.jdk.home" value="${jdk.home.1.6}"/>
-  <property name="project.jdk.bin" value="${jdk.bin.1.6}"/>
-  <property name="project.jdk.classpath" value="jdk.classpath.1.6"/>
-  
   <!-- Modules -->
   
-  <import file="${basedir}/module_ugv.xml"/>
+  
+  <!-- Module UGV -->
+  
+  <dirname property="module.ugv.basedir" file="${ant.file}"/>
+  
+  
+  
+  <property name="compiler.args.ugv" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="ugv.output.dir" value="${module.ugv.basedir}/bin"/>
+  <property name="ugv.testoutput.dir" value="${module.ugv.basedir}/bin"/>
+  
+  <path id="ugv.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ugv.module.production.classpath">
+    <pathelement location="${basedir}/../../../../Library/Java/Extensions/mason.18.jar"/>
+    <pathelement location="${basedir}/../../../../Library/Java/Extensions/ecj"/>
+  </path>
+  
+  <path id="ugv.runtime.production.module.classpath">
+    <pathelement location="${ugv.output.dir}"/>
+    <pathelement location="${basedir}/../../../../Library/Java/Extensions/mason.18.jar"/>
+    <pathelement location="${basedir}/../../../../Library/Java/Extensions/ecj"/>
+  </path>
+  
+  <path id="ugv.module.classpath">
+    <pathelement location="${ugv.output.dir}"/>
+    <pathelement location="${basedir}/../../../../Library/Java/Extensions/mason.18.jar"/>
+    <pathelement location="${basedir}/../../../../Library/Java/Extensions/ecj"/>
+  </path>
+  
+  <path id="ugv.runtime.module.classpath">
+    <pathelement location="${ugv.output.dir}"/>
+    <pathelement location="${basedir}/../../../../Library/Java/Extensions/mason.18.jar"/>
+    <pathelement location="${basedir}/../../../../Library/Java/Extensions/ecj"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ugv">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.ugv">
+    <patternset refid="excluded.from.module.ugv"/>
+  </patternset>
+  
+  <path id="ugv.module.sourcepath">
+    <dirset dir="${module.ugv.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ugv" depends="compile.module.ugv.production,compile.module.ugv.tests" description="Compile module UGV"/>
+  
+  <target name="compile.module.ugv.production" description="Compile module UGV; production classes">
+    <mkdir dir="${ugv.output.dir}"/>
+    <javac destdir="${ugv.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true">
+      <compilerarg line="${compiler.args.ugv}"/>
+      <bootclasspath refid="ugv.module.bootclasspath"/>
+      <classpath refid="ugv.module.production.classpath"/>
+      <src refid="ugv.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ugv"/>
+    </javac>
+    
+    <copy todir="${ugv.output.dir}">
+      <fileset dir="${module.ugv.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ugv.tests" depends="compile.module.ugv.production" description="compile module UGV; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ugv" description="cleanup module">
+    <delete dir="${ugv.output.dir}"/>
+    <delete dir="${ugv.testoutput.dir}"/>
+  </target>
   
   <target name="init" description="Build initialization">
     <!-- Perform any build initialization in this target -->

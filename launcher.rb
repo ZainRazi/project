@@ -4,14 +4,14 @@ require_relative 'carGrammar'
 define_type :car do
   extends(:setup, :simple)
 
-  population  20
-  elites      0
+  population  10
+  elites      2
 
-  representation :grammar_derivation, length: 1000, max_wraps: 1, root: 'main', rules: grammar()
+  representation :grammar_derivation, length: 500000, max_wraps: 2, root: 'main', rules: grammar()
 
-  selector :s, :tournament, size: 5
-  variator :x, :one_point_crossover, rate: 0.7, source: :s
-  variator :m, :uniform_mutation, rate: 0.2, source: :x
+  selector :s, :tournament, size: 3
+  variator :x, :two_point_crossover, rate: 0.7, source: :s
+  variator :m, :uniform_mutation, rate: 0.6, source: :x
 
 
 
@@ -25,7 +25,14 @@ define_type :car do
     x.slice!("#<Chromosome::Car:")
     x.slice!(">")
  
-    results = battle(car)
+    results = 0
+    
+    i = 0
+    
+    while (i < 5) do
+        results = results + battle(car)
+        i = i + 1
+    end
 
     return Fitness::Simple.new(true, results)
 

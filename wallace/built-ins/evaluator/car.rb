@@ -192,8 +192,8 @@ define_specification :car do
         else
           flag = true
           forceOffLine.each do |z|
-            if(z[0] - v1[0]).abs < 5
-              if(z[1] - v1[1]).abs < 5
+            if(z[0] - v1[0]).abs > -0.1
+              if(z[1] - v1[1]).abs > -0.1
                 flag = false
               end
             end
@@ -208,8 +208,8 @@ define_specification :car do
         else
           flag = true
           parked.each do |z|
-            if(z[0] - v1[0]).abs < 5
-              if(z[1] - v1[1]).abs < 5
+            if(z[0] - v1[0]).abs > -0.1
+              if(z[1] - v1[1]).abs > -0.1
                 flag = false
               end
             end
@@ -224,8 +224,8 @@ define_specification :car do
         else
           flag = true
           crossedLine.each do |z|
-            if(z[0] - v1[0]).abs < 5
-              if(z[1] - v1[1]).abs < 5
+            if(z[0] - v1[0]).abs > -0.1
+              if(z[1] - v1[1]).abs > -0.1
                 flag = false
               end
             end
@@ -240,8 +240,8 @@ define_specification :car do
         else
           flag = true
           collideCar.each do |z|
-            if(z[0] - v1[0]).abs < 5
-              if(z[1] - v1[1]).abs < 5
+            if(z[0] - v1[0]).abs > -0.1
+              if(z[1] - v1[1]).abs > -0.1
                 flag = false
               end
             end
@@ -255,12 +255,12 @@ define_specification :car do
       array = Array.new
     end
 
+    totalFitness = forceOffLine.count + parked.count + crossedLine.count + collideCar.count
 
-
-
+    FileUtils.cp("FitnessLog.txt","UGV/evolved/#{x}/fitnessScore#{totalFitness}.txt")
     FileUtils.rm_rf("FitnessLog.txt", secure: true)
 
-    return forceOffLine.count + parked.count + crossedLine.count + collideCar.count
+    return totalFitness
 
   end
 
