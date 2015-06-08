@@ -14,42 +14,30 @@ define_specification(:car) do
 
   ruby_file('fileutils')
 
-  # The name of this particular combatant.
+
   attribute :name,  ruby(:string)
   attribute :header,  ruby(:string)
-  # Constructs a new robocode chromosome.
+
   constructor [
 
-                  # The path to the robocode directory.
                   parameter(:path,  ruby(:string)),
 
-                  # The body of this robocode chromosome.
                   parameter(:body,  ruby(:string))
 
               ] do
 
-    # Produce (and store) a unique name for this tank.
-    #self.name = "Tank_#{self.object_id}"
     self.name = "DumbCarImpl"
 
-    # Calculate the path to the evolved robots directory.
     robots_path = "#{path}/robots/sample/evolved"
 
-    # Add the header to the body.
-    #      body = "
-    #      package sample.evolved;
-    #      import robocode.*;
-    #      public class #{name} extends AdvancedRobot {
-    #      #{body}
-    #      }"
 
 
 ###################################
     header = File.read("UGV/dumbCarHeader.txt")
-    body = "#{header}
+    body = "{header}
 
 
-    #{body}"
+    {body}"
 ####################################
 
 
